@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NUKE ON HOOD — NUKE</title>
+<meta name="description" content="NUKE ON HOOD — a radioactive market dashboard for NUKE on Robinhood Chain.">
+<style>
+:root{--bg:#050805;--panel:#0b100b;--line:#1d331d;--text:#b9ff5a;--muted:#70a83d;--accent:#9dff00;--danger:#ff5b45}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 80% 0%,#191919 0,#080808 35%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(8,8,8,.86);backdrop-filter:blur(14px);z-index:10}
+.brand{color:#a8ff38;font-weight:900;letter-spacing:.12em;font-size:18px;display:flex;align-items:center;gap:9px}.brand-logo{width:30px;height:30px;object-fit:contain;border-radius:50%;}.navlinks{display:flex;gap:24px;color:#aaa;font-size:13px}.navlinks a:hover{color:#fff}
+.btn{border:1px solid #75b82a;background:#9dff00;color:#071000;box-shadow:0 0 18px rgba(157,255,0,.12);padding:12px 18px;border-radius:4px;font-weight:800;font-size:13px;cursor:pointer}.btn.dark{background:#111;color:#fff;border-color:#444}
+.hero{padding:100px 0 70px;display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center}
+.kicker{color:#8cff24;font-size:12px;letter-spacing:.25em;color:#999;font-weight:800}.hero h1{color:#b7ff45;text-shadow:0 0 24px rgba(140,255,36,.18);font-size:clamp(60px,10vw,128px);line-height:.82;margin:18px 0;letter-spacing:-.07em}.hero p{max-width:600px;color:#aaa;font-size:18px;line-height:1.6}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.reactor{height:330px;border:1px solid #333;background:linear-gradient(145deg,#151515,#090909);display:grid;place-items:center;position:relative;overflow:hidden}.reactor-logo{width:min(78%,300px);height:auto;object-fit:contain;animation:pulse 2.8s infinite}.reactor:after{content:"REACTOR ACTIVE";position:absolute;bottom:18px;left:18px;font:700 10px monospace;letter-spacing:.18em;color:#999}@keyframes pulse{50%{transform:scale(1.06);filter:drop-shadow(0 0 45px #fff4)}}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0 70px}.card{border:1px solid var(--line);background:var(--panel);padding:22px}.label{font-size:10px;letter-spacing:.18em;color:#777;font-weight:800}.value{color:#b7ff45;text-shadow:0 0 14px rgba(140,255,36,.12);font-size:28px;font-weight:850;margin-top:9px}.section{padding:35px 0 80px}.section h2{color:#a8ff38;font-size:34px;letter-spacing:-.04em;margin:0 0 8px}.sub{color:#888;margin-bottom:24px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fee{border:1px solid #333;background:#0e0e0e;padding:30px}.fee .big{color:#b7ff45;text-shadow:0 0 18px rgba(140,255,36,.15);font-size:56px;font-weight:900;letter-spacing:-.05em}.bar{height:12px;background:#242424;margin:22px 0;overflow:hidden}.bar span{display:block;height:100%;width:50%;background:#9dff00;box-shadow:0 0 18px rgba(157,255,0,.55)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#aaa;word-break:break-all}
+table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#0d0d0d}td,th{padding:15px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{color:#777;font-size:10px;letter-spacing:.15em}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#777;font-size:12px}.status{display:inline-flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:#9dff00;border-radius:50%;box-shadow:0 0 12px #fff}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:65px}.reactor{height:240px}.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.navlinks{display:none}.hero h1{color:#b7ff45;text-shadow:0 0 24px rgba(140,255,36,.18);font-size:72px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.wrap{padding:0 16px}.hero h1{color:#b7ff45;text-shadow:0 0 24px rgba(140,255,36,.18);font-size:60px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap" style="width:100%;display:flex;justify-content:space-between;align-items:center"><div class="brand"><img src="nuke-logo.jpeg" alt="NUKE" class="brand-logo"><span>NUKE</span></div><div class="navlinks"><a href="#dashboard">DASHBOARD</a><a href="#rewards">REWARDS</a><a href="#transparency">TRANSPARENCY</a></div><a class="btn" href="#rewards">CONNECT WALLET</a></div></nav>
+
+<main>
+<section class="hero wrap">
+<div>
+<div class="kicker">ROBINHOOD CHAIN</div>
+<h1>NUKE<br>ON HOOD</h1>
+<p>The market's most radioactive asset. A transparent fee dashboard built for NUKE holders — with the goal of routing a defined share of creator fees back to the community.</p>
+<div class="actions"><a class="btn" href="#dashboard">ENTER REACTOR</a><a class="btn dark" href="#transparency">VIEW CONTRACT</a></div>
+</div>
+<div class="reactor"><img class="reactor-logo" src="nuke-logo.jpeg" alt="NUKE radioactive logo"><div style="position:absolute;top:16px;right:18px;font:700 10px monospace;color:#777">RH // 4663</div></div>
+</section>
+
+<section id="dashboard" class="wrap section">
+<div class="kicker">LIVE MARKET</div><h2>REACTOR DASHBOARD</h2><div class="sub">These values are demo placeholders until the real NUKE token address is connected.</div>
+<div class="grid">
+<div class="card"><div class="label">MARKET CAP</div><div class="value" id="mc">$1.24M</div></div>
+<div class="card"><div class="label">24H VOLUME</div><div class="value" id="vol">$487K</div></div>
+<div class="card"><div class="label">HOLDERS</div><div class="value" id="holders">1,842</div></div>
+<div class="card"><div class="label">PRICE</div><div class="value" id="price">$0.0000124</div></div>
+</div>
+
+<div class="two">
+<div class="fee"><div class="label">CREATOR FEES GENERATED</div><div class="big">$3,241.00</div><div class="sub">Demo value — replace with Bankr public fee data after launch.</div></div>
+<div class="fee"><div class="label">COMMUNITY ALLOCATION</div><div class="big">50%</div><div class="bar"><span></span></div><div class="status"><span class="dot"></span> TARGET: HOLDER REWARDS</div></div>
+</div>
+</section>
+
+<section id="rewards" class="wrap section">
+<div class="kicker">HOLDER ECONOMY</div><h2>NUKE REWARDS</h2><div class="sub">The claim interface is ready for the rewards contract once it is deployed and audited.</div>
+<div class="two">
+<div class="card"><div class="label">YOUR NUKE</div><div class="value">—</div><p class="sub">Connect a compatible wallet to read your balance.</p><button class="btn" onclick="connect()">CONNECT WALLET</button></div>
+<div class="card"><div class="label">AVAILABLE REWARDS</div><div class="value">—</div><p class="sub">Rewards will appear here after the distribution contract is live.</p><button class="btn dark" onclick="claim()">CLAIM REWARDS</button></div>
+</div>
+</section>
+
+<section id="transparency" class="wrap section">
+<div class="kicker">VERIFY EVERYTHING</div><h2>TRANSPARENCY</h2><div class="sub">Public identifiers will be displayed here so holders can independently verify the system on-chain.</div>
+<table><tr><th>ITEM</th><th>STATUS</th><th>ADDRESS / VALUE</th></tr>
+<tr><td>Chain</td><td>LIVE</td><td>Robinhood Chain — 4663</td></tr>
+<tr><td>NUKE Token</td><td>PLACEHOLDER</td><td class="mono">ADD NUKE CONTRACT AFTER LAUNCH</td></tr>
+<tr><td>Pool</td><td>PLACEHOLDER</td><td class="mono">ADD BANKR POOL ID AFTER LAUNCH</td></tr>
+<tr><td>Rewards Contract</td><td>NOT DEPLOYED</td><td class="mono">DEPLOY + AUDIT BEFORE CLAIMS</td></tr>
+</table>
+</section>
+</main>
+
+<footer><div class="wrap"><strong>☢ NUKE ON HOOD</strong><br><br>Experimental community project. Dashboard figures shown above are placeholders until connected to verified on-chain data. Nothing on this page is investment advice.</div></footer>
+<script>
+function connect(){alert("Wallet connection will be enabled after the NUKE contract and supported wallet flow are configured.");}
+function claim(){alert("Rewards claiming will activate after the holder-rewards smart contract is deployed and verified.");}
+</script>
+</body>
+</html>
