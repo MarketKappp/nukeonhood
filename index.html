@@ -224,6 +224,8 @@ th{
   font-size:10px;
   letter-spacing:.15em;
 }
+.live{color:#9dff00;font-weight:800}
+.pending{color:#888}
 
 .holders{
   border:1px solid var(--line);
@@ -252,6 +254,8 @@ th{
   overflow:hidden;
   text-overflow:ellipsis;
 }
+.wallet a{color:#ccc}
+.wallet a:hover{color:#9dff00}
 .held{color:#b7ff45;font-weight:800}
 .share-wrap .mini{
   height:6px;
@@ -348,7 +352,7 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       <p>The market's most radioactive asset. A transparent fee dashboard built for NUKE holders — with the goal of routing a defined share of creator fees back to the community.</p>
       <div class="actions">
         <a class="btn" href="#dashboard">ENTER REACTOR</a>
-        <a class="btn dark" href="#transparency">VIEW CONTRACT</a>
+        <a class="btn dark" id="viewContract" href="#transparency">VIEW CONTRACT</a>
       </div>
     </div>
     <div class="reactor">
@@ -360,23 +364,23 @@ footer p{margin:0;line-height:1.7;max-width:620px}
   <section id="dashboard" class="wrap section">
     <div class="kicker">LIVE MARKET</div>
     <h2>REACTOR DASHBOARD</h2>
-    <div class="sub">These values are demo placeholders until the real NUKE token address is connected.</div>
+    <div class="sub" id="dashSub">Waiting for the NUKE contract. Stats stay blank until launch data is connected.</div>
     <div class="grid">
-      <div class="card"><div class="label">MARKET CAP</div><div class="value" id="mc">$1.24M</div></div>
-      <div class="card"><div class="label">24H VOLUME</div><div class="value" id="vol">$487K</div></div>
-      <div class="card"><div class="label">HOLDERS</div><div class="value" id="holdersCount">1,842</div></div>
-      <div class="card"><div class="label">PRICE</div><div class="value" id="price">$0.0000124</div></div>
+      <div class="card"><div class="label">MARKET CAP</div><div class="value" id="mc">—</div></div>
+      <div class="card"><div class="label">24H VOLUME</div><div class="value" id="vol">—</div></div>
+      <div class="card"><div class="label">HOLDERS</div><div class="value" id="holdersCount">—</div></div>
+      <div class="card"><div class="label">PRICE</div><div class="value" id="price">—</div></div>
     </div>
     <div class="two">
       <div class="fee">
         <div class="label">CREATOR FEES GENERATED</div>
-        <div class="big">$3,241.00</div>
-        <div class="sub">Demo value — replace with Bankr public fee data after launch.</div>
+        <div class="big" id="fees">—</div>
+        <div class="sub" id="feesSub">Live Bankr fee total after launch.</div>
       </div>
       <div class="fee">
         <div class="label">COMMUNITY ALLOCATION</div>
-        <div class="big">50%</div>
-        <div class="bar"><span></span></div>
+        <div class="big" id="alloc">50%</div>
+        <div class="bar"><span id="allocBar"></span></div>
         <div class="status"><span class="dot"></span> TARGET: HOLDER REWARDS</div>
       </div>
     </div>
@@ -385,19 +389,10 @@ footer p{margin:0;line-height:1.7;max-width:620px}
   <section id="holders" class="wrap section">
     <div class="kicker">LEADERBOARD</div>
     <h2>TOP HOLDERS</h2>
-    <div class="sub">Demo ranking until the NUKE contract is connected. Live wallets will replace these rows after launch.</div>
-    <div class="holders">
+    <div class="sub" id="holdersSub">Live wallets appear here after the contract is set.</div>
+    <div class="holders" id="holdersList">
       <div class="holder-row head"><div>RANK</div><div>WALLET</div><div>NUKE</div><div>SHARE</div></div>
-      <div class="holder-row"><div class="rank">01</div><div class="wallet">0x8c2a…a91f</div><div class="held">124.8M</div><div class="share-wrap">8.4%<div class="mini"><span style="width:84%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">02</div><div class="wallet">0x3be1…10c4</div><div class="held">97.2M</div><div class="share-wrap">6.5%<div class="mini"><span style="width:65%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">03</div><div class="wallet">0x91d0…77ab</div><div class="held">81.4M</div><div class="share-wrap">5.5%<div class="mini"><span style="width:55%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">04</div><div class="wallet">0x44f6…c20e</div><div class="held">63.9M</div><div class="share-wrap">4.3%<div class="mini"><span style="width:43%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">05</div><div class="wallet">0xaa17…9b33</div><div class="held">51.0M</div><div class="share-wrap">3.4%<div class="mini"><span style="width:34%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">06</div><div class="wallet">0x70ce…e4d2</div><div class="held">44.6M</div><div class="share-wrap">3.0%<div class="mini"><span style="width:30%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">07</div><div class="wallet">0x12b9…6f80</div><div class="held">38.1M</div><div class="share-wrap">2.6%<div class="mini"><span style="width:26%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">08</div><div class="wallet">0xef55…21aa</div><div class="held">29.7M</div><div class="share-wrap">2.0%<div class="mini"><span style="width:20%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">09</div><div class="wallet">0x6a04…bb18</div><div class="held">24.2M</div><div class="share-wrap">1.6%<div class="mini"><span style="width:16%"></span></div></div></div>
-      <div class="holder-row"><div class="rank">10</div><div class="wallet">0xc81d…4907</div><div class="held">19.5M</div><div class="share-wrap">1.3%<div class="mini"><span style="width:13%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">—</div><div class="wallet">No live holders yet</div><div class="held">—</div><div class="share-wrap">—</div></div>
     </div>
   </section>
 
@@ -424,14 +419,26 @@ footer p{margin:0;line-height:1.7;max-width:620px}
   <section id="transparency" class="wrap section">
     <div class="kicker">VERIFY EVERYTHING</div>
     <h2>TRANSPARENCY</h2>
-    <div class="sub">Public identifiers will be displayed here so holders can independently verify the system on-chain.</div>
+    <div class="sub">Public identifiers so holders can independently verify the system on-chain.</div>
     <div class="table-wrap">
       <table>
         <tr><th>ITEM</th><th>STATUS</th><th>ADDRESS / VALUE</th></tr>
-        <tr><td>Chain</td><td>LIVE</td><td>Robinhood Chain — 4663</td></tr>
-        <tr><td>NUKE Token</td><td>PLACEHOLDER</td><td class="mono">ADD NUKE CONTRACT AFTER LAUNCH</td></tr>
-        <tr><td>Pool</td><td>PLACEHOLDER</td><td class="mono">ADD BANKR POOL ID AFTER LAUNCH</td></tr>
-        <tr><td>Rewards Contract</td><td>NOT DEPLOYED</td><td class="mono">DEPLOY + AUDIT BEFORE CLAIMS</td></tr>
+        <tr><td>Chain</td><td class="live">LIVE</td><td>Robinhood Chain — 4663</td></tr>
+        <tr>
+          <td>NUKE Token</td>
+          <td id="tokenStatus" class="pending">WAITING</td>
+          <td class="mono" id="tokenAddr">Not set</td>
+        </tr>
+        <tr>
+          <td>Pool</td>
+          <td id="poolStatus" class="pending">WAITING</td>
+          <td class="mono" id="poolAddr">Not set</td>
+        </tr>
+        <tr>
+          <td>Rewards Contract</td>
+          <td id="rewardsStatus" class="pending">NOT DEPLOYED</td>
+          <td class="mono" id="rewardsAddr">Deploy + audit before claims</td>
+        </tr>
       </table>
     </div>
   </section>
@@ -443,17 +450,212 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       <img src="nuke-logo.jpg" alt="NUKE" class="brand-logo">
       <strong>NUKE ON HOOD</strong>
     </div>
-    <p>Experimental community project. Dashboard figures shown above are placeholders until connected to verified on-chain data. Nothing on this page is investment advice.</p>
+    <p>Experimental community project. Market figures are pulled live after the token contract is connected. Nothing on this page is investment advice.</p>
   </div>
 </footer>
 
 <script>
+/* =========================================================
+   LAUNCH SETTINGS — paste these after you launch, then republish
+   ========================================================= */
+const NUKE_TOKEN = "";          // paste token 0x... here
+const BANKR_POOL = "";          // paste pool 0x... here
+const REWARDS_CONTRACT = "";    // leave blank until rewards is live
+const COMMUNITY_PCT = 50;
+const EXPLORER = "https://robinhoodchain.blockscout.com";
+/* ========================================================= */
+
 function connect(){
   alert("Wallet connection will be enabled after the NUKE contract and supported wallet flow are configured.");
 }
 function claim(){
   alert("Rewards claiming will activate after the holder-rewards smart contract is deployed and verified.");
 }
+
+function isAddr(v){
+  return /^0x[a-fA-F0-9]{40}$/.test((v || "").trim());
+}
+function shortAddr(a){
+  if(!a) return "—";
+  return a.slice(0,6) + "…" + a.slice(-4);
+}
+function fmtUsd(n){
+  if(n == null || Number.isNaN(Number(n))) return "—";
+  n = Number(n);
+  if(n >= 1e6) return "$" + (n/1e6).toFixed(2) + "M";
+  if(n >= 1e3) return "$" + (n/1e3).toFixed(2) + "K";
+  if(n >= 1) return "$" + n.toFixed(2);
+  if(n >= 0.0001) return "$" + n.toFixed(6);
+  return "$" + n.toPrecision(3);
+}
+function fmtNum(n){
+  if(n == null || Number.isNaN(Number(n))) return "—";
+  return Number(n).toLocaleString("en-US");
+}
+function fmtTok(n){
+  if(n == null || Number.isNaN(Number(n))) return "—";
+  n = Number(n);
+  if(n >= 1e9) return (n/1e9).toFixed(2) + "B";
+  if(n >= 1e6) return (n/1e6).toFixed(2) + "M";
+  if(n >= 1e3) return (n/1e3).toFixed(2) + "K";
+  return n.toLocaleString("en-US", {maximumFractionDigits: 2});
+}
+function setText(id, v){
+  const el = document.getElementById(id);
+  if(el) el.textContent = v;
+}
+
+async function getJson(url){
+  const res = await fetch(url);
+  if(!res.ok) throw new Error(url + " " + res.status);
+  return res.json();
+}
+
+async function loadDex(token){
+  const urls = [
+    "https://api.dexscreener.com/tokens/v1/robinhood/" + token,
+    "https://api.dexscreener.com/latest/dex/tokens/" + token
+  ];
+  for(const url of urls){
+    try{
+      const data = await getJson(url);
+      const pairs = Array.isArray(data) ? data : (data.pairs || []);
+      const hood = pairs.filter(p => (p.chainId || "").toLowerCase().includes("robin"));
+      const p = (hood[0] || pairs[0]);
+      if(!p) continue;
+      return {
+        price: p.priceUsd != null ? Number(p.priceUsd) : null,
+        marketCap: p.marketCap != null ? Number(p.marketCap) : (p.fdv != null ? Number(p.fdv) : null),
+        volume24h: p.volume && p.volume.h24 != null ? Number(p.volume.h24) : null,
+        pairUrl: p.url || ("https://dexscreener.com/robinhood/" + token)
+      };
+    }catch(e){}
+  }
+  return null;
+}
+
+async function loadFees(token){
+  const urls = [
+    "https://api.bankr.bot/token-launches/" + token + "/fees?days=30",
+    "https://api.bankr.bot/public/doppler/token-fees/" + token + "?days=30"
+  ];
+  for(const url of urls){
+    try{
+      const data = await getJson(url);
+      const life = data.lifetimeEarnedWeth
+        || (data.totals && (data.totals.lifetimeEarnedWeth || data.totals.lifetimeUsd || data.totals.earnedUsd))
+        || data.totalFeesUsd
+        || data.lifetimeUsd;
+      const token0 = data.tokens && data.tokens[0];
+      const claimed = token0 && (token0.claimedUsd || token0.lifetimeUsd);
+      const val = life || claimed;
+      if(val != null) return Number(val);
+    }catch(e){}
+  }
+  return null;
+}
+
+async function loadHolders(token){
+  try{
+    const info = await getJson(EXPLORER + "/api/v2/tokens/" + token);
+    const count = info.holders_count != null ? Number(info.holders_count) : (info.holders != null ? Number(info.holders) : null);
+    const list = await getJson(EXPLORER + "/api/v2/tokens/" + token + "/holders?limit=10");
+    const rows = (list.items || list.result || []).slice(0, 10).map((h, i) => {
+      const addr = h.address && (h.address.hash || h.address) || h.hash;
+      const raw = h.value != null ? h.value : (h.balance || "0");
+      const dec = Number((info.decimals != null ? info.decimals : 18));
+      const bal = Number(raw) / Math.pow(10, dec);
+      const total = info.total_supply ? Number(info.total_supply) / Math.pow(10, dec) : null;
+      const share = total ? (bal / total) * 100 : null;
+      return { rank: i + 1, addr, bal, share };
+    });
+    return { count, rows };
+  }catch(e){
+    return { count: null, rows: [] };
+  }
+}
+
+function renderHolders(rows){
+  const box = document.getElementById("holdersList");
+  let html = '<div class="holder-row head"><div>RANK</div><div>WALLET</div><div>NUKE</div><div>SHARE</div></div>';
+  if(!rows.length){
+    html += '<div class="holder-row"><div class="rank">—</div><div class="wallet">No live holders yet</div><div class="held">—</div><div class="share-wrap">—</div></div>';
+    box.innerHTML = html;
+    return;
+  }
+  rows.forEach(r => {
+    const pct = r.share == null ? 0 : Math.max(1, Math.min(100, r.share * 4));
+    const shareTxt = r.share == null ? "—" : r.share.toFixed(2) + "%";
+    html += '<div class="holder-row">'
+      + '<div class="rank">' + String(r.rank).padStart(2,"0") + '</div>'
+      + '<div class="wallet"><a href="' + EXPLORER + '/address/' + r.addr + '" target="_blank" rel="noopener">' + shortAddr(r.addr) + '</a></div>'
+      + '<div class="held">' + fmtTok(r.bal) + '</div>'
+      + '<div class="share-wrap">' + shareTxt + '<div class="mini"><span style="width:' + pct + '%"></span></div></div>'
+      + '</div>';
+  });
+  box.innerHTML = html;
+}
+
+function paintTransparency(){
+  document.getElementById("alloc").textContent = COMMUNITY_PCT + "%";
+  document.getElementById("allocBar").style.width = COMMUNITY_PCT + "%";
+
+  if(isAddr(NUKE_TOKEN)){
+    setText("tokenStatus", "LIVE");
+    document.getElementById("tokenStatus").className = "live";
+    document.getElementById("tokenAddr").innerHTML =
+      '<a href="' + EXPLORER + '/token/' + NUKE_TOKEN + '" target="_blank" rel="noopener">' + NUKE_TOKEN + '</a>';
+    const vc = document.getElementById("viewContract");
+    vc.href = EXPLORER + "/token/" + NUKE_TOKEN;
+    vc.target = "_blank";
+    vc.rel = "noopener";
+  }
+  if(isAddr(BANKR_POOL)){
+    setText("poolStatus", "LIVE");
+    document.getElementById("poolStatus").className = "live";
+    document.getElementById("poolAddr").innerHTML =
+      '<a href="' + EXPLORER + '/address/' + BANKR_POOL + '" target="_blank" rel="noopener">' + BANKR_POOL + '</a>';
+  }
+  if(isAddr(REWARDS_CONTRACT)){
+    setText("rewardsStatus", "LIVE");
+    document.getElementById("rewardsStatus").className = "live";
+    document.getElementById("rewardsAddr").innerHTML =
+      '<a href="' + EXPLORER + '/address/' + REWARDS_CONTRACT + '" target="_blank" rel="noopener">' + REWARDS_CONTRACT + '</a>';
+  }
+}
+
+async function refresh(){
+  paintTransparency();
+  if(!isAddr(NUKE_TOKEN)){
+    setText("dashSub", "Waiting for the NUKE contract. Stats stay blank until launch data is connected.");
+    return;
+  }
+  setText("dashSub", "Live market data. Refreshes automatically.");
+  setText("holdersSub", "Live wallets from Robinhood Chain explorer.");
+
+  const [mkt, fees, holders] = await Promise.all([
+    loadDex(NUKE_TOKEN).catch(() => null),
+    loadFees(NUKE_TOKEN).catch(() => null),
+    loadHolders(NUKE_TOKEN).catch(() => ({count:null, rows:[]}))
+  ]);
+
+  if(mkt){
+    setText("price", fmtUsd(mkt.price));
+    setText("mc", fmtUsd(mkt.marketCap));
+    setText("vol", fmtUsd(mkt.volume24h));
+  }
+  if(fees != null){
+    setText("fees", fmtUsd(fees));
+    setText("feesSub", "Bankr public fee data.");
+  }else{
+    setText("feesSub", "Fee feed not available yet. Check Bankr after first trades.");
+  }
+  if(holders.count != null) setText("holdersCount", fmtNum(holders.count));
+  renderHolders(holders.rows || []);
+}
+
+refresh();
+setInterval(refresh, 20000);
 </script>
 </body>
 </html>
