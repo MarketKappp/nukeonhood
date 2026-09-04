@@ -106,18 +106,22 @@ nav{
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 
 .reactor{
-  height:330px;
+  width:100%;
+  max-width:420px;
+  aspect-ratio:1;
+  height:auto;
   border:1px solid #333;
-  background:linear-gradient(145deg,#151515,#090909);
+  background:#050505;
   display:grid;
   place-items:center;
   position:relative;
   overflow:hidden;
+  justify-self:end;
 }
 .reactor-logo{
-  width:min(78%,300px);
-  height:auto;
-  object-fit:contain;
+  width:100%;
+  height:100%;
+  object-fit:cover;
   animation:pulse 2.8s infinite;
 }
 .reactor:after{
@@ -221,6 +225,46 @@ th{
   letter-spacing:.15em;
 }
 
+.holders{
+  border:1px solid var(--line);
+  background:#0d0d0d;
+}
+.holder-row{
+  display:grid;
+  grid-template-columns:52px 1fr 140px 90px;
+  gap:12px;
+  align-items:center;
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+}
+.holder-row:last-child{border-bottom:0}
+.holder-row.head{
+  color:#777;
+  font-size:10px;
+  letter-spacing:.15em;
+  font-weight:800;
+}
+.rank{color:#b7ff45;font-weight:800}
+.wallet{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  color:#ccc;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.held{color:#b7ff45;font-weight:800}
+.share-wrap .mini{
+  height:6px;
+  background:#242424;
+  margin-top:6px;
+  overflow:hidden;
+}
+.share-wrap .mini span{
+  display:block;
+  height:100%;
+  background:#9dff00;
+}
+
 footer{
   border-top:1px solid var(--line);
   padding:48px 0 64px;
@@ -244,12 +288,18 @@ footer p{margin:0;line-height:1.7;max-width:620px}
     padding:16px 0 28px;
     gap:28px;
   }
-  .reactor{height:240px}
+  .reactor{
+    max-width:100%;
+    height:auto;
+    justify-self:stretch;
+  }
   .grid{grid-template-columns:1fr 1fr}
   .two{grid-template-columns:1fr}
   .navlinks{display:none}
   .section{padding:52px 0}
   .hero h1{font-size:72px}
+  .holder-row{grid-template-columns:40px 1fr 110px}
+  .holder-row .share-wrap{display:none}
 }
 @media(max-width:480px){
   .grid{grid-template-columns:1fr}
@@ -258,6 +308,8 @@ footer p{margin:0;line-height:1.7;max-width:620px}
   .section{padding:44px 0}
   .hero h1{font-size:60px}
   .fee .big{font-size:44px}
+  .holder-row{grid-template-columns:36px 1fr;gap:8px}
+  .holder-row .held{grid-column:2;font-size:12px}
 }
 @media(orientation:landscape) and (max-height:500px){
   nav{height:64px}
@@ -266,7 +318,7 @@ footer p{margin:0;line-height:1.7;max-width:620px}
     padding:12px 0 20px;
     gap:20px;
   }
-  .reactor{height:180px}
+  .reactor{max-width:100%;height:auto}
   .navlinks{display:none}
 }
 </style>
@@ -280,6 +332,7 @@ footer p{margin:0;line-height:1.7;max-width:620px}
     </div>
     <div class="navlinks">
       <a href="#dashboard">DASHBOARD</a>
+      <a href="#holders">HOLDERS</a>
       <a href="#rewards">REWARDS</a>
       <a href="#transparency">TRANSPARENCY</a>
     </div>
@@ -311,7 +364,7 @@ footer p{margin:0;line-height:1.7;max-width:620px}
     <div class="grid">
       <div class="card"><div class="label">MARKET CAP</div><div class="value" id="mc">$1.24M</div></div>
       <div class="card"><div class="label">24H VOLUME</div><div class="value" id="vol">$487K</div></div>
-      <div class="card"><div class="label">HOLDERS</div><div class="value" id="holders">1,842</div></div>
+      <div class="card"><div class="label">HOLDERS</div><div class="value" id="holdersCount">1,842</div></div>
       <div class="card"><div class="label">PRICE</div><div class="value" id="price">$0.0000124</div></div>
     </div>
     <div class="two">
@@ -326,6 +379,25 @@ footer p{margin:0;line-height:1.7;max-width:620px}
         <div class="bar"><span></span></div>
         <div class="status"><span class="dot"></span> TARGET: HOLDER REWARDS</div>
       </div>
+    </div>
+  </section>
+
+  <section id="holders" class="wrap section">
+    <div class="kicker">LEADERBOARD</div>
+    <h2>TOP HOLDERS</h2>
+    <div class="sub">Demo ranking until the NUKE contract is connected. Live wallets will replace these rows after launch.</div>
+    <div class="holders">
+      <div class="holder-row head"><div>RANK</div><div>WALLET</div><div>NUKE</div><div>SHARE</div></div>
+      <div class="holder-row"><div class="rank">01</div><div class="wallet">0x8c2a…a91f</div><div class="held">124.8M</div><div class="share-wrap">8.4%<div class="mini"><span style="width:84%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">02</div><div class="wallet">0x3be1…10c4</div><div class="held">97.2M</div><div class="share-wrap">6.5%<div class="mini"><span style="width:65%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">03</div><div class="wallet">0x91d0…77ab</div><div class="held">81.4M</div><div class="share-wrap">5.5%<div class="mini"><span style="width:55%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">04</div><div class="wallet">0x44f6…c20e</div><div class="held">63.9M</div><div class="share-wrap">4.3%<div class="mini"><span style="width:43%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">05</div><div class="wallet">0xaa17…9b33</div><div class="held">51.0M</div><div class="share-wrap">3.4%<div class="mini"><span style="width:34%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">06</div><div class="wallet">0x70ce…e4d2</div><div class="held">44.6M</div><div class="share-wrap">3.0%<div class="mini"><span style="width:30%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">07</div><div class="wallet">0x12b9…6f80</div><div class="held">38.1M</div><div class="share-wrap">2.6%<div class="mini"><span style="width:26%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">08</div><div class="wallet">0xef55…21aa</div><div class="held">29.7M</div><div class="share-wrap">2.0%<div class="mini"><span style="width:20%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">09</div><div class="wallet">0x6a04…bb18</div><div class="held">24.2M</div><div class="share-wrap">1.6%<div class="mini"><span style="width:16%"></span></div></div></div>
+      <div class="holder-row"><div class="rank">10</div><div class="wallet">0xc81d…4907</div><div class="held">19.5M</div><div class="share-wrap">1.3%<div class="mini"><span style="width:13%"></span></div></div></div>
     </div>
   </section>
 
