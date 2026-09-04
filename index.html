@@ -15,288 +15,65 @@
   --accent:#9dff00;
 }
 *{box-sizing:border-box}
-html{
-  scroll-behavior:smooth;
-  background:#080808;
-}
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  min-height:100%;
-  overflow-x:hidden;
-  background-color:#080808;
-}
-body{
-  color:var(--text);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:radial-gradient(circle at 80% 0%,#191919 0,#080808 35%) #080808;
-}
+html{scroll-behavior:smooth;background:#080808}
+html,body{margin:0;padding:0;width:100%;min-height:100%;overflow-x:hidden;background-color:#080808}
+body{color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 0%,#191919 0,#080808 35%) #080808}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1180px;margin:auto;padding:0 24px}
-
-nav{
-  height:76px;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  position:sticky;
-  top:0;
-  background:rgba(8,8,8,.92);
-  backdrop-filter:blur(14px);
-  z-index:10;
-}
-.brand{
-  color:#a8ff38;
-  font-weight:900;
-  letter-spacing:.12em;
-  font-size:18px;
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-.brand-logo{
-  width:30px;
-  height:30px;
-  object-fit:contain;
-  border-radius:50%;
-}
+nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;background:rgba(8,8,8,.92);backdrop-filter:blur(14px);z-index:10}
+.brand{color:#a8ff38;font-weight:900;letter-spacing:.12em;font-size:18px;display:flex;align-items:center;gap:9px}
+.brand-logo{width:30px;height:30px;object-fit:contain;border-radius:50%}
 .navlinks{display:flex;gap:24px;color:#aaa;font-size:13px}
 .navlinks a:hover{color:#fff}
-.btn{
-  border:1px solid #75b82a;
-  background:#9dff00;
-  color:#071000;
-  box-shadow:0 0 18px rgba(157,255,0,.12);
-  padding:12px 18px;
-  border-radius:4px;
-  font-weight:800;
-  font-size:13px;
-  cursor:pointer;
-}
+.btn{border:1px solid #75b82a;background:#9dff00;color:#071000;box-shadow:0 0 18px rgba(157,255,0,.12);padding:12px 18px;border-radius:4px;font-weight:800;font-size:13px;cursor:pointer}
 .btn.dark{background:#111;color:#fff;border-color:#444}
-
-.hero{
-  padding:36px 0 48px;
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:60px;
-  align-items:center;
-}
-.kicker{
-  color:#999;
-  font-size:12px;
-  letter-spacing:.25em;
-  font-weight:800;
-}
-.hero h1{
-  color:#b7ff45;
-  text-shadow:0 0 24px rgba(140,255,36,.18);
-  font-size:clamp(60px,10vw,128px);
-  line-height:.82;
-  margin:14px 0;
-  letter-spacing:-.07em;
-}
-.hero p{
-  max-width:600px;
-  color:#aaa;
-  font-size:18px;
-  line-height:1.6;
-}
+.hero{padding:36px 0 48px;display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center}
+.kicker{color:#999;font-size:12px;letter-spacing:.25em;font-weight:800}
+.hero h1{color:#b7ff45;text-shadow:0 0 24px rgba(140,255,36,.18);font-size:clamp(60px,10vw,128px);line-height:.82;margin:14px 0;letter-spacing:-.07em}
+.hero p{max-width:600px;color:#aaa;font-size:18px;line-height:1.6}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-
-.reactor{
-  width:100%;
-  max-width:420px;
-  aspect-ratio:1;
-  height:auto;
-  border:1px solid #333;
-  background:#050505;
-  display:grid;
-  place-items:center;
-  position:relative;
-  overflow:hidden;
-  justify-self:end;
-}
-.reactor-logo{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  animation:pulse 2.8s infinite;
-}
-.reactor:after{
-  content:"REACTOR ACTIVE";
-  position:absolute;
-  bottom:18px;
-  left:18px;
-  font:700 10px monospace;
-  letter-spacing:.18em;
-  color:#999;
-}
-@keyframes pulse{
-  50%{transform:scale(1.06);filter:drop-shadow(0 0 45px #fff4)}
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  margin:20px 0 32px;
-}
-.card{
-  border:1px solid var(--line);
-  background:var(--panel);
-  padding:22px;
-}
-.label{
-  font-size:10px;
-  letter-spacing:.18em;
-  color:#777;
-  font-weight:800;
-}
-.value{
-  color:#b7ff45;
-  text-shadow:0 0 14px rgba(140,255,36,.12);
-  font-size:28px;
-  font-weight:800;
-  margin-top:9px;
-}
-
+.reactor{width:100%;max-width:420px;aspect-ratio:1;height:auto;border:1px solid #333;background:#050505;display:grid;place-items:center;position:relative;overflow:hidden;justify-self:end}
+.reactor-logo{width:100%;height:100%;object-fit:cover;animation:pulse 2.8s infinite}
+.reactor:after{content:"REACTOR ACTIVE";position:absolute;bottom:18px;left:18px;font:700 10px monospace;letter-spacing:.18em;color:#999}
+@keyframes pulse{50%{transform:scale(1.06);filter:drop-shadow(0 0 45px #fff4)}}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0 32px}
+.card{border:1px solid var(--line);background:var(--panel);padding:22px}
+.label{font-size:10px;letter-spacing:.18em;color:#777;font-weight:800}
+.value{color:#b7ff45;text-shadow:0 0 14px rgba(140,255,36,.12);font-size:28px;font-weight:800;margin-top:9px}
 .section{padding:64px 0}
-.section h2{
-  color:#a8ff38;
-  font-size:34px;
-  letter-spacing:-.04em;
-  margin:0 0 8px;
-}
+.section h2{color:#a8ff38;font-size:34px;letter-spacing:-.04em;margin:0 0 8px}
 .sub{color:#888;margin-bottom:24px}
-.two{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-.fee{
-  border:1px solid #333;
-  background:#0e0e0e;
-  padding:30px;
-}
-.fee .big{
-  color:#b7ff45;
-  text-shadow:0 0 18px rgba(140,255,36,.15);
-  font-size:56px;
-  font-weight:900;
-  letter-spacing:-.05em;
-}
-.bar{
-  height:12px;
-  background:#242424;
-  margin:22px 0;
-  overflow:hidden;
-}
-.bar span{
-  display:block;
-  height:100%;
-  width:50%;
-  background:#9dff00;
-  box-shadow:0 0 18px rgba(157,255,0,.55);
-}
-.mono{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:12px;
-  color:#aaa;
-  word-break:break-word;
-}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fee{border:1px solid #333;background:#0e0e0e;padding:30px}
+.fee .big{color:#b7ff45;text-shadow:0 0 18px rgba(140,255,36,.15);font-size:56px;font-weight:900;letter-spacing:-.05em}
+.bar{height:12px;background:#242424;margin:22px 0;overflow:hidden}
+.bar span{display:block;height:100%;width:50%;background:#9dff00;box-shadow:0 0 18px rgba(157,255,0,.55)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#aaa;word-break:break-word}
 .table-wrap{width:100%;overflow-x:auto}
-table{
-  width:100%;
-  border-collapse:collapse;
-  border:1px solid var(--line);
-  background:#0d0d0d;
-}
-td,th{
-  padding:15px;
-  border-bottom:1px solid var(--line);
-  text-align:left;
-  font-size:13px;
-}
-th{
-  color:#777;
-  font-size:10px;
-  letter-spacing:.15em;
-}
+table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#0d0d0d}
+td,th{padding:15px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}
+th{color:#777;font-size:10px;letter-spacing:.15em}
 .live{color:#9dff00;font-weight:800}
 .pending{color:#888}
-
-.holders{
-  border:1px solid var(--line);
-  background:#0d0d0d;
-}
-.holder-row{
-  display:grid;
-  grid-template-columns:52px 1fr 140px 90px;
-  gap:12px;
-  align-items:center;
-  padding:14px 16px;
-  border-bottom:1px solid var(--line);
-}
+.holders{border:1px solid var(--line);background:#0d0d0d}
+.holder-row{display:grid;grid-template-columns:52px 1fr 140px 90px;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
 .holder-row:last-child{border-bottom:0}
-.holder-row.head{
-  color:#777;
-  font-size:10px;
-  letter-spacing:.15em;
-  font-weight:800;
-}
+.holder-row.head{color:#777;font-size:10px;letter-spacing:.15em;font-weight:800}
 .rank{color:#b7ff45;font-weight:800}
-.wallet{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:12px;
-  color:#ccc;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
+.wallet{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#ccc;overflow:hidden;text-overflow:ellipsis}
 .wallet a{color:#ccc}
 .wallet a:hover{color:#9dff00}
 .held{color:#b7ff45;font-weight:800}
-.share-wrap .mini{
-  height:6px;
-  background:#242424;
-  margin-top:6px;
-  overflow:hidden;
-}
-.share-wrap .mini span{
-  display:block;
-  height:100%;
-  background:#9dff00;
-}
-
-footer{
-  border-top:1px solid var(--line);
-  padding:48px 0 64px;
-  color:#777;
-  font-size:12px;
-}
+.share-wrap .mini{height:6px;background:#242424;margin-top:6px;overflow:hidden}
+.share-wrap .mini span{display:block;height:100%;background:#9dff00}
+footer{border-top:1px solid var(--line);padding:48px 0 64px;color:#777;font-size:12px}
 footer .brand{margin-bottom:16px}
 footer p{margin:0;line-height:1.7;max-width:620px}
 .status{display:inline-flex;align-items:center;gap:7px}
-.dot{
-  width:7px;
-  height:7px;
-  background:#9dff00;
-  border-radius:50%;
-  box-shadow:0 0 12px #fff;
-}
-
+.dot{width:7px;height:7px;background:#9dff00;border-radius:50%;box-shadow:0 0 12px #fff}
 @media(max-width:800px){
-  .hero{
-    grid-template-columns:1fr;
-    padding:16px 0 28px;
-    gap:28px;
-  }
-  .reactor{
-    max-width:100%;
-    height:auto;
-    justify-self:stretch;
-  }
+  .hero{grid-template-columns:1fr;padding:16px 0 28px;gap:28px}
+  .reactor{max-width:100%;height:auto;justify-self:stretch}
   .grid{grid-template-columns:1fr 1fr}
   .two{grid-template-columns:1fr}
   .navlinks{display:none}
@@ -317,11 +94,7 @@ footer p{margin:0;line-height:1.7;max-width:620px}
 }
 @media(orientation:landscape) and (max-height:500px){
   nav{height:64px}
-  .hero{
-    grid-template-columns:1fr 1fr;
-    padding:12px 0 20px;
-    gap:20px;
-  }
+  .hero{grid-template-columns:1fr 1fr;padding:12px 0 20px;gap:20px}
   .reactor{max-width:100%;height:auto}
   .navlinks{display:none}
 }
@@ -343,7 +116,6 @@ footer p{margin:0;line-height:1.7;max-width:620px}
     <a class="btn" href="#rewards">CONNECT WALLET</a>
   </div>
 </nav>
-
 <main>
   <section class="hero wrap">
     <div>
@@ -351,8 +123,13 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       <h1>NUKE<br>ON HOOD</h1>
       <p>The market's most radioactive asset. A transparent fee dashboard built for NUKE holders — with the goal of routing a defined share of creator fees back to the community.</p>
       <div class="actions">
-        <a class="btn" href="#dashboard">ENTER REACTOR</a>
-        <a class="btn dark" id="viewContract" href="#transparency">VIEW CONTRACT</a>
+        <a class="btn" href="https://bankr.bot/terminal/trade?out=0x3ff28dfff997af1c63296e7eb6b8a51d136caba3&chain=robinhood" target="_blank" rel="noopener">BUY $NUKE</a>
+        <a class="btn dark" id="viewContract" href="https://robinhoodchain.blockscout.com/token/0x3ff28dfff997af1c63296e7eb6b8a51d136caba3" target="_blank" rel="noopener">VIEW CONTRACT</a>
+        <a class="btn dark" href="https://www.bankr.bot/launches/0x3ff28dfff997af1c63296e7eb6b8a51d136caba3" target="_blank" rel="noopener">BANKR LAUNCH</a>
+      </div>
+      <div class="actions" style="margin-top:14px;align-items:center">
+        <div class="kicker" style="letter-spacing:.12em">CA</div>
+        <button class="btn dark" type="button" id="copyCa" onclick="copyCa()">0x3ff2…aba3 · COPY</button>
       </div>
     </div>
     <div class="reactor">
@@ -360,7 +137,6 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       <div style="position:absolute;top:16px;right:18px;font:700 10px monospace;color:#777">RH // 4663</div>
     </div>
   </section>
-
   <section id="dashboard" class="wrap section">
     <div class="kicker">LIVE MARKET</div>
     <h2>REACTOR DASHBOARD</h2>
@@ -385,7 +161,6 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       </div>
     </div>
   </section>
-
   <section id="holders" class="wrap section">
     <div class="kicker">LEADERBOARD</div>
     <h2>TOP HOLDERS</h2>
@@ -395,7 +170,6 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       <div class="holder-row"><div class="rank">—</div><div class="wallet">No live holders yet</div><div class="held">—</div><div class="share-wrap">—</div></div>
     </div>
   </section>
-
   <section id="rewards" class="wrap section">
     <div class="kicker">HOLDER ECONOMY</div>
     <h2>NUKE REWARDS</h2>
@@ -415,7 +189,6 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       </div>
     </div>
   </section>
-
   <section id="transparency" class="wrap section">
     <div class="kicker">VERIFY EVERYTHING</div>
     <h2>TRANSPARENCY</h2>
@@ -424,26 +197,13 @@ footer p{margin:0;line-height:1.7;max-width:620px}
       <table>
         <tr><th>ITEM</th><th>STATUS</th><th>ADDRESS / VALUE</th></tr>
         <tr><td>Chain</td><td class="live">LIVE</td><td>Robinhood Chain — 4663</td></tr>
-        <tr>
-          <td>NUKE Token</td>
-          <td id="tokenStatus" class="pending">WAITING</td>
-          <td class="mono" id="tokenAddr">Not set</td>
-        </tr>
-        <tr>
-          <td>Pool</td>
-          <td id="poolStatus" class="pending">WAITING</td>
-          <td class="mono" id="poolAddr">Not set</td>
-        </tr>
-        <tr>
-          <td>Rewards Contract</td>
-          <td id="rewardsStatus" class="pending">NOT DEPLOYED</td>
-          <td class="mono" id="rewardsAddr">Deploy + audit before claims</td>
-        </tr>
+        <tr><td>NUKE Token</td><td id="tokenStatus" class="pending">WAITING</td><td class="mono" id="tokenAddr">Not set</td></tr>
+        <tr><td>Pool</td><td id="poolStatus" class="pending">WAITING</td><td class="mono" id="poolAddr">Not set</td></tr>
+        <tr><td>Rewards Contract</td><td id="rewardsStatus" class="pending">NOT DEPLOYED</td><td class="mono" id="rewardsAddr">Deploy + audit before claims</td></tr>
       </table>
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <div class="brand">
@@ -453,32 +213,24 @@ footer p{margin:0;line-height:1.7;max-width:620px}
     <p>Experimental community project. Market figures are pulled live after the token contract is connected. Nothing on this page is investment advice.</p>
   </div>
 </footer>
-
 <script>
-/* =========================================================
-   LAUNCH SETTINGS — paste these after you launch, then republish
-   ========================================================= */
-const NUKE_TOKEN = "";          // paste token 0x... here
-const BANKR_POOL = "";          // paste pool 0x... here
-const REWARDS_CONTRACT = "";    // leave blank until rewards is live
+const NUKE_TOKEN = "0x3ff28dfff997af1c63296e7eb6b8a51d136caba3";
+const BANKR_POOL = "0xfe820eb87d542c4a18e194af839abb565aa6ee5b93683e1e2001398ef49c98e4";
+const REWARDS_CONTRACT = "";
 const COMMUNITY_PCT = 50;
 const EXPLORER = "https://robinhoodchain.blockscout.com";
-/* ========================================================= */
 
-function connect(){
-  alert("Wallet connection will be enabled after the NUKE contract and supported wallet flow are configured.");
+function connect(){ alert("Wallet connection will be enabled after the NUKE contract and supported wallet flow are configured."); }
+function claim(){ alert("Rewards claiming will activate after the holder-rewards smart contract is deployed and verified."); }
+function copyCa(){
+  const ca = NUKE_TOKEN;
+  const btn = document.getElementById("copyCa");
+  const done = function(){ if(!btn) return; const old = btn.textContent; btn.textContent = "COPIED"; setTimeout(function(){ btn.textContent = old; }, 1400); };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(ca).then(done).catch(function(){ window.prompt("Copy CA", ca); }); }
+  else { window.prompt("Copy CA", ca); }
 }
-function claim(){
-  alert("Rewards claiming will activate after the holder-rewards smart contract is deployed and verified.");
-}
-
-function isAddr(v){
-  return /^0x[a-fA-F0-9]{40}$/.test((v || "").trim());
-}
-function shortAddr(a){
-  if(!a) return "—";
-  return a.slice(0,6) + "…" + a.slice(-4);
-}
+function isAddr(v){ return /^0x[a-fA-F0-9]{40}$/.test((v || "").trim()); }
+function shortAddr(a){ if(!a) return "—"; return a.slice(0,6) + "…" + a.slice(-4); }
 function fmtUsd(n){
   if(n == null || Number.isNaN(Number(n))) return "—";
   n = Number(n);
@@ -488,10 +240,7 @@ function fmtUsd(n){
   if(n >= 0.0001) return "$" + n.toFixed(6);
   return "$" + n.toPrecision(3);
 }
-function fmtNum(n){
-  if(n == null || Number.isNaN(Number(n))) return "—";
-  return Number(n).toLocaleString("en-US");
-}
+function fmtNum(n){ if(n == null || Number.isNaN(Number(n))) return "—"; return Number(n).toLocaleString("en-US"); }
 function fmtTok(n){
   if(n == null || Number.isNaN(Number(n))) return "—";
   n = Number(n);
@@ -500,22 +249,10 @@ function fmtTok(n){
   if(n >= 1e3) return (n/1e3).toFixed(2) + "K";
   return n.toLocaleString("en-US", {maximumFractionDigits: 2});
 }
-function setText(id, v){
-  const el = document.getElementById(id);
-  if(el) el.textContent = v;
-}
-
-async function getJson(url){
-  const res = await fetch(url);
-  if(!res.ok) throw new Error(url + " " + res.status);
-  return res.json();
-}
-
+function setText(id, v){ const el = document.getElementById(id); if(el) el.textContent = v; }
+async function getJson(url){ const res = await fetch(url); if(!res.ok) throw new Error(url + " " + res.status); return res.json(); }
 async function loadDex(token){
-  const urls = [
-    "https://api.dexscreener.com/tokens/v1/robinhood/" + token,
-    "https://api.dexscreener.com/latest/dex/tokens/" + token
-  ];
+  const urls = ["https://api.dexscreener.com/tokens/v1/robinhood/" + token, "https://api.dexscreener.com/latest/dex/tokens/" + token];
   for(const url of urls){
     try{
       const data = await getJson(url);
@@ -523,29 +260,17 @@ async function loadDex(token){
       const hood = pairs.filter(p => (p.chainId || "").toLowerCase().includes("robin"));
       const p = (hood[0] || pairs[0]);
       if(!p) continue;
-      return {
-        price: p.priceUsd != null ? Number(p.priceUsd) : null,
-        marketCap: p.marketCap != null ? Number(p.marketCap) : (p.fdv != null ? Number(p.fdv) : null),
-        volume24h: p.volume && p.volume.h24 != null ? Number(p.volume.h24) : null,
-        pairUrl: p.url || ("https://dexscreener.com/robinhood/" + token)
-      };
+      return { price: p.priceUsd != null ? Number(p.priceUsd) : null, marketCap: p.marketCap != null ? Number(p.marketCap) : (p.fdv != null ? Number(p.fdv) : null), volume24h: p.volume && p.volume.h24 != null ? Number(p.volume.h24) : null };
     }catch(e){}
   }
   return null;
 }
-
 async function loadFees(token){
-  const urls = [
-    "https://api.bankr.bot/token-launches/" + token + "/fees?days=30",
-    "https://api.bankr.bot/public/doppler/token-fees/" + token + "?days=30"
-  ];
+  const urls = ["https://api.bankr.bot/token-launches/" + token + "/fees?days=30", "https://api.bankr.bot/public/doppler/token-fees/" + token + "?days=30"];
   for(const url of urls){
     try{
       const data = await getJson(url);
-      const life = data.lifetimeEarnedWeth
-        || (data.totals && (data.totals.lifetimeEarnedWeth || data.totals.lifetimeUsd || data.totals.earnedUsd))
-        || data.totalFeesUsd
-        || data.lifetimeUsd;
+      const life = data.lifetimeEarnedWeth || (data.totals && (data.totals.lifetimeEarnedWeth || data.totals.lifetimeUsd || data.totals.earnedUsd)) || data.totalFeesUsd || data.lifetimeUsd;
       const token0 = data.tokens && data.tokens[0];
       const claimed = token0 && (token0.claimedUsd || token0.lifetimeUsd);
       const val = life || claimed;
@@ -554,7 +279,6 @@ async function loadFees(token){
   }
   return null;
 }
-
 async function loadHolders(token){
   try{
     const info = await getJson(EXPLORER + "/api/v2/tokens/" + token);
@@ -570,90 +294,59 @@ async function loadHolders(token){
       return { rank: i + 1, addr, bal, share };
     });
     return { count, rows };
-  }catch(e){
-    return { count: null, rows: [] };
-  }
+  }catch(e){ return { count: null, rows: [] }; }
 }
-
 function renderHolders(rows){
   const box = document.getElementById("holdersList");
   let html = '<div class="holder-row head"><div>RANK</div><div>WALLET</div><div>NUKE</div><div>SHARE</div></div>';
   if(!rows.length){
     html += '<div class="holder-row"><div class="rank">—</div><div class="wallet">No live holders yet</div><div class="held">—</div><div class="share-wrap">—</div></div>';
-    box.innerHTML = html;
-    return;
+    box.innerHTML = html; return;
   }
   rows.forEach(r => {
     const pct = r.share == null ? 0 : Math.max(1, Math.min(100, r.share * 4));
     const shareTxt = r.share == null ? "—" : r.share.toFixed(2) + "%";
-    html += '<div class="holder-row">'
-      + '<div class="rank">' + String(r.rank).padStart(2,"0") + '</div>'
-      + '<div class="wallet"><a href="' + EXPLORER + '/address/' + r.addr + '" target="_blank" rel="noopener">' + shortAddr(r.addr) + '</a></div>'
-      + '<div class="held">' + fmtTok(r.bal) + '</div>'
-      + '<div class="share-wrap">' + shareTxt + '<div class="mini"><span style="width:' + pct + '%"></span></div></div>'
-      + '</div>';
+    html += '<div class="holder-row"><div class="rank">' + String(r.rank).padStart(2,"0") + '</div><div class="wallet"><a href="' + EXPLORER + '/address/' + r.addr + '" target="_blank" rel="noopener">' + shortAddr(r.addr) + '</a></div><div class="held">' + fmtTok(r.bal) + '</div><div class="share-wrap">' + shareTxt + '<div class="mini"><span style="width:' + pct + '%"></span></div></div></div>';
   });
   box.innerHTML = html;
 }
-
 function paintTransparency(){
   document.getElementById("alloc").textContent = COMMUNITY_PCT + "%";
   document.getElementById("allocBar").style.width = COMMUNITY_PCT + "%";
-
   if(isAddr(NUKE_TOKEN)){
     setText("tokenStatus", "LIVE");
     document.getElementById("tokenStatus").className = "live";
-    document.getElementById("tokenAddr").innerHTML =
-      '<a href="' + EXPLORER + '/token/' + NUKE_TOKEN + '" target="_blank" rel="noopener">' + NUKE_TOKEN + '</a>';
+    document.getElementById("tokenAddr").innerHTML = '<a href="' + EXPLORER + '/token/' + NUKE_TOKEN + '" target="_blank" rel="noopener">' + NUKE_TOKEN + '</a>';
     const vc = document.getElementById("viewContract");
-    vc.href = EXPLORER + "/token/" + NUKE_TOKEN;
-    vc.target = "_blank";
-    vc.rel = "noopener";
+    vc.href = EXPLORER + "/token/" + NUKE_TOKEN; vc.target = "_blank"; vc.rel = "noopener";
   }
-  if(isAddr(BANKR_POOL)){
+  if(BANKR_POOL && BANKR_POOL.length > 10){
     setText("poolStatus", "LIVE");
     document.getElementById("poolStatus").className = "live";
-    document.getElementById("poolAddr").innerHTML =
-      '<a href="' + EXPLORER + '/address/' + BANKR_POOL + '" target="_blank" rel="noopener">' + BANKR_POOL + '</a>';
+    document.getElementById("poolAddr").innerHTML = '<a href="https://dexscreener.com/robinhood/' + BANKR_POOL + '" target="_blank" rel="noopener">' + BANKR_POOL + '</a>';
   }
   if(isAddr(REWARDS_CONTRACT)){
     setText("rewardsStatus", "LIVE");
     document.getElementById("rewardsStatus").className = "live";
-    document.getElementById("rewardsAddr").innerHTML =
-      '<a href="' + EXPLORER + '/address/' + REWARDS_CONTRACT + '" target="_blank" rel="noopener">' + REWARDS_CONTRACT + '</a>';
+    document.getElementById("rewardsAddr").innerHTML = '<a href="' + EXPLORER + '/address/' + REWARDS_CONTRACT + '" target="_blank" rel="noopener">' + REWARDS_CONTRACT + '</a>';
   }
 }
-
 async function refresh(){
   paintTransparency();
-  if(!isAddr(NUKE_TOKEN)){
-    setText("dashSub", "Waiting for the NUKE contract. Stats stay blank until launch data is connected.");
-    return;
-  }
+  if(!isAddr(NUKE_TOKEN)){ setText("dashSub", "Waiting for the NUKE contract. Stats stay blank until launch data is connected."); return; }
   setText("dashSub", "Live market data. Refreshes automatically.");
   setText("holdersSub", "Live wallets from Robinhood Chain explorer.");
-
   const [mkt, fees, holders] = await Promise.all([
     loadDex(NUKE_TOKEN).catch(() => null),
     loadFees(NUKE_TOKEN).catch(() => null),
     loadHolders(NUKE_TOKEN).catch(() => ({count:null, rows:[]}))
   ]);
-
-  if(mkt){
-    setText("price", fmtUsd(mkt.price));
-    setText("mc", fmtUsd(mkt.marketCap));
-    setText("vol", fmtUsd(mkt.volume24h));
-  }
-  if(fees != null){
-    setText("fees", fmtUsd(fees));
-    setText("feesSub", "Bankr public fee data.");
-  }else{
-    setText("feesSub", "Fee feed not available yet. Check Bankr after first trades.");
-  }
+  if(mkt){ setText("price", fmtUsd(mkt.price)); setText("mc", fmtUsd(mkt.marketCap)); setText("vol", fmtUsd(mkt.volume24h)); }
+  if(fees != null){ setText("fees", fmtUsd(fees)); setText("feesSub", "Bankr public fee data."); }
+  else { setText("feesSub", "Fee feed not available yet. Check Bankr after first trades."); }
   if(holders.count != null) setText("holdersCount", fmtNum(holders.count));
   renderHolders(holders.rows || []);
 }
-
 refresh();
 setInterval(refresh, 20000);
 </script>
